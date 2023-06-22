@@ -17,6 +17,8 @@ jobs:
         uses: docker/metadata-action@v4.3.0
         with:
           images: ghcr.io/mindbox-cloud/traefik-forward-auth
+          tags: |
+            type=sha
 
       - name: docker login
         uses: docker/login-action@v2.1.0
