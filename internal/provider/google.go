@@ -7,6 +7,7 @@ import (
 	"net/http"
 	"net/url"
 	"net/http/httputil"
+  "log"
 )
 
 // Google provider
