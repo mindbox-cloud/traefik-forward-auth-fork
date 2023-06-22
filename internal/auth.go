@@ -198,6 +198,8 @@ func EncodeUser(user *provider.User) (string, error) {
 }
 
 func DecodeUser(encoded *string) (*provider.User, error) {
+  log.Debugf("Encoded user: %s\n", *encoded)
+
 	user := &provider.User{}
 	j, err := base64.URLEncoding.DecodeString(*encoded)
 	if err != nil {
