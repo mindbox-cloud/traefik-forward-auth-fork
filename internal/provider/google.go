@@ -111,12 +111,12 @@ func (g *Google) GetUser(token string) (User, error) {
 
 	defer res.Body.Close()
 
-	b, err := httputil.DumpResponse(res, true)
+	dump, err := httputil.DumpResponse(res, true)
 	if err != nil {
 		log.Fatalln(err)
 	}
 
-	fmt.Println(string(b))
+  fmt.Printf("%q", dump)
 
 	err = json.NewDecoder(res.Body).Decode(&user)
 
