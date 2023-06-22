@@ -6,6 +6,7 @@ import (
 	"fmt"
 	"net/http"
 	"net/url"
+	"net/http/httputil"
 )
 
 // Google provider
@@ -109,6 +110,14 @@ func (g *Google) GetUser(token string) (User, error) {
 	}
 
 	defer res.Body.Close()
+
+	b, err := httputil.DumpResponse(res, true)
+	if err != nil {
+		log.Fatalln(err)
+	}
+
+	fmt.Println(string(b))
+
 	err = json.NewDecoder(res.Body).Decode(&user)
 
 	return user, err
