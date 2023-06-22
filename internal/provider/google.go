@@ -32,7 +32,7 @@ func (g *Google) Setup() error {
 	}
 
 	// Set static values
-	g.Scope = "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/admin.directory.group.member.readonly"
+	g.Scope = "https://www.googleapis.com/auth/userinfo.profile https://www.googleapis.com/auth/userinfo.email https://www.googleapis.com/auth/admin.directory.group.readonly"
 	g.LoginURL = &url.URL{
 		Scheme: "https",
 		Host:   "accounts.google.com",
